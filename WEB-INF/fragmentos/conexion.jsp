@@ -18,7 +18,7 @@
 <c:if test="${empty dbPort}"><c:set var="dbPort" value="27151"/></c:if>
 <c:if test="${empty dbName}"><c:set var="dbName" value="defaultdb"/></c:if>
 <c:if test="${empty dbUser}"><c:set var="dbUser" value="avnadmin"/></c:if>
-<c:if test="${empty dbPassword}"><c:set var="dbPassword" value="AVNS_lZMKEqkuXWGN6TORns4"/></c:if>
+
 
 <c:set var="dbUrl" value="jdbc:mysql://${dbHost}:${dbPort}/${dbName}?sslMode=REQUIRED&characterEncoding=UTF-8&serverTimezone=America/Bogota&useOldAliasMetadataBehavior=true"/>
 
