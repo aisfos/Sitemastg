@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <display-name>Sistemas TG</display-name>
+
+  <!-- req. 10 y 11: UTF-8 en todas las JSP (páginas y fragmentos), y scriptlets
+       prohibidos por configuración de Jasper, no solo por disciplina. -->
+  <jsp-config>
+    <jsp-property-group>
+      <description>JSP y fragmentos: codificación UTF-8 y sin scriptlets</description>
+      <url-pattern>*.jsp</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <scripting-invalid>true</scripting-invalid>
+    </jsp-property-group>
+    <jsp-property-group>
+      <description>Preludio de taglibs para las páginas JSP.
+        Los fragmentos de /WEB-INF/fragmentos no declaran taglibs: usan los de la
+        página que los incluye. La inclusión de un fragmento es estática (textual),
+        así que el preludio no se aplica ni se duplica en el fragmento.</description>
+      <url-pattern>*.jsp</url-pattern>
+      <include-prelude>/WEB-INF/fragmentos/taglibs.jsp</include-prelude>
+    </jsp-property-group>
+  </jsp-config>
+
+  <session-config>
+    <session-timeout>30</session-timeout>
+    <cookie-config>
+      <http-only>true</http-only>
+    </cookie-config>
+  </session-config>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+
+  <!-- M9 (req. 20e, 35): los archivos de documentacion y los scripts del
+       proyecto no se sirven por HTTP. El auth-constraint vacio significa
+       "denegar a todos": Tomcat responde 403 antes de llegar al recurso. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Archivos internos del proyecto</web-resource-name>
+      <url-pattern>/docs/*</url-pattern>
+      <url-pattern>/AGENTS.md</url-pattern>
+      <url-pattern>/PLAN.md</url-pattern>
+      <url-pattern>*.md</url-pattern>
+      <url-pattern>*.sql</url-pattern>
+      <url-pattern>*.ps1</url-pattern>
+    </web-resource-collection>
+    <auth-constraint/>
+  </security-constraint>
+</web-app>

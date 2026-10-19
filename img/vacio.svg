@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <!-- Ilustracion para los estados vacios (M9-E parte C). Colores planos que
+       se leen sobre superficie clara y oscura. -->
+  <ellipse cx="120" cy="140" rx="86" ry="10" fill="#4bab6c" opacity="0.12"/>
+  <rect x="58" y="34" width="124" height="88" rx="12" fill="none" stroke="#4bab6c" stroke-width="3"/>
+  <path d="M58 54h124" fill="none" stroke="#7cc494" stroke-width="3"/>
+  <circle cx="70" cy="44" r="3" fill="#4bab6c"/>
+  <circle cx="82" cy="44" r="3" fill="#7cc494"/>
+  <circle cx="94" cy="44" r="3" fill="#9ba8b1"/>
+  <rect x="74" y="68" width="92" height="9" rx="4.5" fill="#7cc494" opacity="0.55"/>
+  <rect x="74" y="86" width="66" height="9" rx="4.5" fill="#9ba8b1" opacity="0.55"/>
+  <rect x="74" y="104" width="80" height="9" rx="4.5" fill="#9ba8b1" opacity="0.35"/>
+  <g fill="none" stroke="#4bab6c" stroke-width="3" stroke-linecap="round">
+    <circle cx="170" cy="112" r="20"/>
+    <path d="m185 127 12 12"/>
+  </g>
+  <g fill="none" stroke="#7cc494" stroke-width="3" stroke-linecap="round">
+    <path d="M46 96 38 104"/>
+    <path d="M46 112 38 112"/>
+  </g>
+</svg>
